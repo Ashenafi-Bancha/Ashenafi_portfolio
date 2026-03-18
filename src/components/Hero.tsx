@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Sparkles } from 'lucide-react';
 import { IconType } from 'react-icons';
-import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import {
   SiMongodb,
   SiNextdotjs,
@@ -101,6 +101,11 @@ const Hero: React.FC = () => {
       label: 'Email',
       icon: FaEnvelope,
       href: `mailto:${profile.email}`,
+    },
+    {
+      label: 'Telegram',
+      icon: FaTelegramPlane,
+      href: profile.social.telegram,
     },
     {
       label: 'Facebook',

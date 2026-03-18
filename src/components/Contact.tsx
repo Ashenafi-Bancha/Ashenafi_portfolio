@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import type { IconType } from 'react-icons';
-import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import { profile } from '../data/profile';
 import { isSupabaseConfigured } from '../lib/supabase';
 import { submitContactMessage } from '../services/contactMessages';
@@ -111,6 +111,12 @@ const Contact: React.FC = () => {
       icon: FaEnvelope,
       label: 'Email',
       url: `mailto:${profile.email}`,
+      color: 'hover:border-cyan-300/60 hover:text-cyan-100',
+    },
+    {
+      icon: FaTelegramPlane,
+      label: 'Telegram',
+      url: profile.social.telegram,
       color: 'hover:border-cyan-300/60 hover:text-cyan-100',
     },
     {

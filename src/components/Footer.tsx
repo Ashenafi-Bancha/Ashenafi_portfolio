@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import type { IconType } from 'react-icons';
-import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import { navigationItems, profile } from '../data/profile';
 
 const Footer: React.FC = () => {
@@ -11,6 +11,7 @@ const Footer: React.FC = () => {
     { icon: FaGithub, url: profile.social.github, label: 'GitHub' },
     { icon: FaLinkedinIn, url: profile.social.linkedin, label: 'LinkedIn' },
     { icon: FaEnvelope, url: `mailto:${profile.email}`, label: 'Email' },
+    { icon: FaTelegramPlane, url: profile.social.telegram, label: 'Telegram' },
     { icon: FaFacebookF, url: profile.social.facebook, label: 'Facebook' },
     { icon: FaWhatsapp, url: profile.social.whatsapp, label: 'WhatsApp' },
   ];
