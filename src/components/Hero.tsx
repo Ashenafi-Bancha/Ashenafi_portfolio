@@ -86,36 +86,48 @@ const Hero: React.FC = () => {
     },
   ];
 
-  const socialLinks = [
+  const socialLinks: { label: string; icon: IconType; href: string; lightClass: string; darkClass: string }[] = [
     {
       label: 'GitHub',
       icon: FaGithub,
       href: profile.social.github,
+      lightClass: 'text-[#181717] hover:border-slate-500/60 hover:bg-slate-100',
+      darkClass: 'text-[#f0f6fc] hover:border-slate-400/60 hover:bg-slate-800',
     },
     {
       label: 'LinkedIn',
       icon: FaLinkedinIn,
       href: profile.social.linkedin,
+      lightClass: 'text-[#0A66C2] hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10',
+      darkClass: 'text-[#0A66C2] hover:border-[#0A66C2]/70 hover:bg-[#0A66C2]/20',
     },
     {
       label: 'Email',
       icon: FaEnvelope,
       href: `mailto:${profile.email}`,
+      lightClass: 'text-[#EA4335] hover:border-[#EA4335]/60 hover:bg-[#EA4335]/10',
+      darkClass: 'text-[#EA4335] hover:border-[#EA4335]/70 hover:bg-[#EA4335]/20',
     },
     {
       label: 'Telegram',
       icon: FaTelegramPlane,
       href: profile.social.telegram,
+      lightClass: 'text-[#229ED9] hover:border-[#229ED9]/60 hover:bg-[#229ED9]/10',
+      darkClass: 'text-[#229ED9] hover:border-[#229ED9]/70 hover:bg-[#229ED9]/20',
     },
     {
       label: 'Facebook',
       icon: FaFacebookF,
       href: profile.social.facebook,
+      lightClass: 'text-[#1877F2] hover:border-[#1877F2]/60 hover:bg-[#1877F2]/10',
+      darkClass: 'text-[#1877F2] hover:border-[#1877F2]/70 hover:bg-[#1877F2]/20',
     },
     {
       label: 'WhatsApp',
       icon: FaWhatsapp,
       href: profile.social.whatsapp,
+      lightClass: 'text-[#25D366] hover:border-[#25D366]/60 hover:bg-[#25D366]/10',
+      darkClass: 'text-[#25D366] hover:border-[#25D366]/70 hover:bg-[#25D366]/20',
     },
   ];
 
@@ -326,8 +338,8 @@ const Hero: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`rounded-xl border p-3 transition-colors ${
                   isLight
-                    ? 'border-slate-300 bg-white text-slate-700 hover:border-cyan-500/70 hover:text-cyan-700'
-                    : 'border-slate-700 bg-slate-900/75 text-slate-200 hover:border-cyan-300/70 hover:text-cyan-200'
+                    ? `border-slate-300 bg-white ${link.lightClass}`
+                    : `border-slate-700 bg-slate-900/75 ${link.darkClass}`
                 }`}
                 aria-label={link.label}
               >

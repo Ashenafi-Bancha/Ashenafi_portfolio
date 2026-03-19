@@ -7,13 +7,43 @@ import { navigationItems, profile } from '../data/profile';
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const socialLinks: { icon: IconType; url: string; label: string }[] = [
-    { icon: FaGithub, url: profile.social.github, label: 'GitHub' },
-    { icon: FaLinkedinIn, url: profile.social.linkedin, label: 'LinkedIn' },
-    { icon: FaEnvelope, url: `mailto:${profile.email}`, label: 'Email' },
-    { icon: FaTelegramPlane, url: profile.social.telegram, label: 'Telegram' },
-    { icon: FaFacebookF, url: profile.social.facebook, label: 'Facebook' },
-    { icon: FaWhatsapp, url: profile.social.whatsapp, label: 'WhatsApp' },
+  const socialLinks: { icon: IconType; url: string; label: string; className: string }[] = [
+    {
+      icon: FaGithub,
+      url: profile.social.github,
+      label: 'GitHub',
+      className: 'text-[#f0f6fc] hover:border-slate-400/70 hover:bg-slate-800',
+    },
+    {
+      icon: FaLinkedinIn,
+      url: profile.social.linkedin,
+      label: 'LinkedIn',
+      className: 'text-[#0A66C2] hover:border-[#0A66C2]/70 hover:bg-[#0A66C2]/20',
+    },
+    {
+      icon: FaEnvelope,
+      url: `mailto:${profile.email}`,
+      label: 'Email',
+      className: 'text-[#EA4335] hover:border-[#EA4335]/70 hover:bg-[#EA4335]/20',
+    },
+    {
+      icon: FaTelegramPlane,
+      url: profile.social.telegram,
+      label: 'Telegram',
+      className: 'text-[#229ED9] hover:border-[#229ED9]/70 hover:bg-[#229ED9]/20',
+    },
+    {
+      icon: FaFacebookF,
+      url: profile.social.facebook,
+      label: 'Facebook',
+      className: 'text-[#1877F2] hover:border-[#1877F2]/70 hover:bg-[#1877F2]/20',
+    },
+    {
+      icon: FaWhatsapp,
+      url: profile.social.whatsapp,
+      label: 'WhatsApp',
+      className: 'text-[#25D366] hover:border-[#25D366]/70 hover:bg-[#25D366]/20',
+    },
   ];
 
   const scrollToSection = (id: string) => {
@@ -46,7 +76,7 @@ const Footer: React.FC = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-lg border border-slate-700 bg-slate-900 p-2 text-slate-300 transition-all duration-200 hover:border-cyan-300/70 hover:text-cyan-100"
+                  className={`rounded-lg border border-slate-700 bg-slate-900 p-2 transition-all duration-200 ${social.className}`}
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
