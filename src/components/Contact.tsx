@@ -94,42 +94,48 @@ const Contact: React.FC = () => {
     },
   ];
 
-  const socialLinks: { icon: IconType; label: string; url: string; color: string }[] = [
+  const socialLinks: { icon: IconType; label: string; url: string; lightClass: string; darkClass: string }[] = [
     {
       icon: FaGithub,
       label: 'GitHub',
       url: profile.social.github,
-      color: 'hover:border-cyan-300/60 hover:text-cyan-100',
+      lightClass: 'text-[#181717] hover:border-slate-500/60 hover:bg-slate-100',
+      darkClass: 'text-[#f0f6fc] hover:border-slate-400/60 hover:bg-slate-800',
     },
     {
       icon: FaLinkedinIn,
       label: 'LinkedIn',
       url: profile.social.linkedin,
-      color: 'hover:border-cyan-300/60 hover:text-cyan-100',
+      lightClass: 'text-[#0A66C2] hover:border-[#0A66C2]/60 hover:bg-[#0A66C2]/10',
+      darkClass: 'text-[#0A66C2] hover:border-[#0A66C2]/70 hover:bg-[#0A66C2]/20',
     },
     {
       icon: FaEnvelope,
       label: 'Email',
       url: `mailto:${profile.email}`,
-      color: 'hover:border-cyan-300/60 hover:text-cyan-100',
+      lightClass: 'text-[#EA4335] hover:border-[#EA4335]/60 hover:bg-[#EA4335]/10',
+      darkClass: 'text-[#EA4335] hover:border-[#EA4335]/70 hover:bg-[#EA4335]/20',
     },
     {
       icon: FaTelegramPlane,
       label: 'Telegram',
       url: profile.social.telegram,
-      color: 'hover:border-cyan-300/60 hover:text-cyan-100',
+      lightClass: 'text-[#229ED9] hover:border-[#229ED9]/60 hover:bg-[#229ED9]/10',
+      darkClass: 'text-[#229ED9] hover:border-[#229ED9]/70 hover:bg-[#229ED9]/20',
     },
     {
       icon: FaFacebookF,
       label: 'Facebook',
       url: profile.social.facebook,
-      color: 'hover:border-cyan-300/60 hover:text-cyan-100',
+      lightClass: 'text-[#1877F2] hover:border-[#1877F2]/60 hover:bg-[#1877F2]/10',
+      darkClass: 'text-[#1877F2] hover:border-[#1877F2]/70 hover:bg-[#1877F2]/20',
     },
     {
       icon: FaWhatsapp,
       label: 'WhatsApp',
       url: profile.social.whatsapp,
-      color: 'hover:border-cyan-300/60 hover:text-cyan-100',
+      lightClass: 'text-[#25D366] hover:border-[#25D366]/60 hover:bg-[#25D366]/10',
+      darkClass: 'text-[#25D366] hover:border-[#25D366]/70 hover:bg-[#25D366]/20',
     },
   ];
 
@@ -224,8 +230,8 @@ const Contact: React.FC = () => {
                     whileTap={{ scale: 0.9 }}
                     className={`rounded-xl border p-4 transition-all duration-300 ${
                       isLight
-                        ? 'border-slate-300 bg-white text-slate-700 hover:border-cyan-500/70 hover:text-cyan-700'
-                        : `border-slate-700 bg-slate-900/80 text-slate-200 ${social.color}`
+                        ? `border-slate-300 bg-white ${social.lightClass}`
+                        : `border-slate-700 bg-slate-900/80 ${social.darkClass}`
                     }`}
                     title={social.label}
                   >
