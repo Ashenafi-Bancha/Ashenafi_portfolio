@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Sparkles } from 'lucide-react';
+import { ArrowRight, Download, Eye, Sparkles } from 'lucide-react';
 import { IconType } from 'react-icons';
 import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import {
@@ -77,12 +77,6 @@ const Hero: React.FC = () => {
       src: profile.photos.professional,
       alt: 'Professional portrait in suit',
       label: 'Professional',
-    },
-    {
-      id: 'coding',
-      src: profile.photos.coding,
-      alt: 'Ashenafi coding on a computer',
-      label: 'Coding',
     },
   ];
 
@@ -177,7 +171,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05, duration: 0.5 }}
-            className="mb-7 grid grid-cols-2 gap-3 sm:gap-4"
+            className="mb-7 grid grid-cols-1 gap-3 sm:gap-4"
           >
             {heroPhotos.map((photo, index) => (
               <motion.figure
@@ -292,6 +286,22 @@ const Hero: React.FC = () => {
               View Projects
               <ArrowRight size={18} />
             </motion.button>
+
+            <motion.a
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3, scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className={`inline-flex items-center gap-2 rounded-xl border px-6 py-3 font-semibold ${
+                isLight
+                  ? 'border-slate-300 bg-white text-slate-800'
+                  : 'border-slate-600 bg-slate-900/85 text-slate-100'
+              }`}
+            >
+              <Eye size={18} />
+              View CV
+            </motion.a>
 
             <motion.a
               href={profile.resumeUrl}

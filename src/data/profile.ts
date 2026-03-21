@@ -29,7 +29,7 @@ export const profile = {
   email: 'ashenafibanchabassa01@gmail.com',
   phoneDisplay: '+251 93 810 3340',
   phoneRaw: '+251938103340',
-  resumeUrl: '/resume.pdf',
+  resumeUrl: '/assets/docs/Ashenafi_Bancha_Resume.pdf',
   availability:
     'Open to internships, junior full-stack roles, and ambitious freelance projects.',
   social: {
@@ -40,8 +40,7 @@ export const profile = {
     whatsapp: 'https://wa.me/251938103340',
   },
   photos: {
-    professional:
-      'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1200&q=80',
+    professional: '/assets/images/Ashu.jpg',
     coding:
       'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80',
   },
