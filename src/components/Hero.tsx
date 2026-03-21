@@ -75,8 +75,7 @@ const Hero: React.FC = () => {
     {
       id: 'professional',
       src: profile.photos.professional,
-      alt: 'Professional portrait in suit',
-      label: 'Professional',
+      alt: 'Professional portrait of Ashenafi Bancha',
     },
   ];
 
@@ -180,19 +179,18 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.08, duration: 0.45 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className={`group relative overflow-hidden rounded-2xl border shadow-xl ${
+                className={`group relative h-56 w-56 overflow-hidden rounded-full border-4 shadow-2xl sm:h-64 sm:w-64 ${
                   isLight
-                    ? 'border-slate-300 bg-white'
-                    : 'border-slate-700/80 bg-slate-900/85'
+                    ? 'border-cyan-200 bg-white/90 shadow-cyan-300/30'
+                    : 'border-cyan-400/40 bg-slate-900/85 shadow-cyan-900/40'
                 }`}
               >
-                <img src={photo.src} alt={photo.alt} loading="lazy" className="h-44 w-full object-cover sm:h-48" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/12 to-transparent" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-3">
-                  <span className="inline-flex rounded-full border border-cyan-300/35 bg-slate-950/65 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-cyan-100">
-                    {photo.label}
-                  </span>
-                </figcaption>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top"
+                />
               </motion.figure>
             ))}
           </motion.div>
