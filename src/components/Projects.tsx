@@ -14,49 +14,40 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'Project Name 01',
+    title: 'Marata Film and Software College Website & LMS',
     description:
-      'Short summary for this project. Replace this text with your project problem, solution, and impact.',
-    image: 'https://placehold.co/1200x800/0f172a/67e8f9?text=Project+Preview+01',
-    techStack: ['React', 'Node.js', 'PostgreSQL'],
-    githubUrl: 'https://github.com/your-username/project-name-01',
-    liveUrl: 'https://your-project-01.vercel.app',
+      'Designed and developed a modern college website integrated with an LMS to manage courses, content delivery, and student learning workflows.',
+    image: 'https://source.unsplash.com/1200x800/?film,cinema,education,technology',
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'LMS'],
+    githubUrl: 'https://github.com/ashenafibassa',
+    liveUrl: 'https://marata-college.example.com',
   },
   {
-    title: 'Project Name 02',
+    title: 'Wolaita Digital E-Museum (Web & Mobile)',
     description:
-      'Short summary for this project. Replace this text with your project problem, solution, and impact.',
-    image: 'https://placehold.co/1200x800/111827/34d399?text=Project+Preview+02',
-    techStack: ['Next.js', 'TailwindCSS', 'Supabase'],
-    githubUrl: 'https://github.com/your-username/project-name-02',
-    liveUrl: 'https://your-project-02.vercel.app',
+      'Built a digital museum platform and companion mobile app to preserve and showcase Wolaita heritage through interactive archives and storytelling.',
+    image: 'https://source.unsplash.com/1200x800/?museum,culture,digital,exhibition',
+    techStack: ['Next.js', 'TypeScript', 'Mobile App', 'Supabase'],
+    githubUrl: 'https://github.com/ashenafibassa',
+    liveUrl: 'https://wolaita-emuseum.example.com',
   },
   {
-    title: 'Project Name 03',
+    title: 'AddisRentHub',
     description:
-      'Short summary for this project. Replace this text with your project problem, solution, and impact.',
-    image: 'https://placehold.co/1200x800/0b1220/38bdf8?text=Project+Preview+03',
-    techStack: ['Vite', 'React', 'TypeScript'],
-    githubUrl: 'https://github.com/your-username/project-name-03',
-    liveUrl: 'https://your-project-03.vercel.app',
+      'Rental management platform for Addis Ababa that streamlines property listings, tenant workflows, and landlord operations in one system.',
+    image: 'https://source.unsplash.com/1200x800/?apartment,rental,city,real-estate',
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'REST API'],
+    githubUrl: 'https://github.com/ashenafibassa',
+    liveUrl: 'https://addisrenthub.example.com',
   },
   {
-    title: 'Project Name 04',
+    title: 'EthioFund',
     description:
-      'Short summary for this project. Replace this text with your project problem, solution, and impact.',
-    image: 'https://placehold.co/1200x800/0f172a/f97316?text=Project+Preview+04',
-    techStack: ['Next.js', 'Prisma', 'PostgreSQL'],
-    githubUrl: 'https://github.com/your-username/project-name-04',
-    liveUrl: 'https://your-project-04.vercel.app',
-  },
-  {
-    title: 'Project Name 05',
-    description:
-      'Short summary for this project. Replace this text with your project problem, solution, and impact.',
-    image: 'https://placehold.co/1200x800/1e293b/facc15?text=Project+Preview+05',
-    techStack: ['React', 'Express', 'MongoDB'],
-    githubUrl: 'https://github.com/your-username/project-name-05',
-    liveUrl: 'https://your-project-05.vercel.app',
+      'GoFundMe-inspired Ethiopian crowdfunding platform focused on payment accessibility, campaign transparency, and trust for local communities.',
+    image: 'https://source.unsplash.com/1200x800/?crowdfunding,donation,community,fintech',
+    techStack: ['Next.js', 'Node.js', 'PostgreSQL', 'Payment Integration'],
+    githubUrl: 'https://github.com/ashenafibassa',
+    liveUrl: 'https://ethiofund.example.com',
   },
 ];
 
