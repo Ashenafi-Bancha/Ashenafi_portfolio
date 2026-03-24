@@ -31,6 +31,19 @@ const Experience: React.FC = () => {
     },
     {
       type: 'internship',
+      title: 'Software Development Summer Camp Trainee',
+      organization: 'INSA 2025 Summer Camp',
+      period: '2025',
+      description:
+        'Joined the development department and worked on building secure applications with a focus on practical software security and modern engineering practices.',
+      highlights: [
+        'Contributed to secure application development tasks within the summer camp development team',
+        'Applied security-aware coding approaches during implementation and testing',
+        'Collaborated with peers and mentors on modern software development workflows',
+      ],
+    },
+    {
+      type: 'internship',
       title: 'Full-Stack Developer Intern',
       organization: 'Marota Film and Software College',
       period: '2024',
