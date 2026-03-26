@@ -18,8 +18,7 @@ export const submitContactMessage = async ({
   if (!isSupabaseConfigured || !supabaseAnonKey) {
     return {
       ok: false,
-      errorMessage:
-        'Supabase is not configured yet. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env file.',
+      errorMessage: 'Messaging service is currently unavailable. Please try again later.',
     };
   }
 

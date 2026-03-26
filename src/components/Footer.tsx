@@ -86,17 +86,18 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold text-white mb-4">
+            <h4 className="mb-4 text-center text-lg font-bold text-white">
               Quick Links
             </h4>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
               {navigationItems.map((link) => (
                 <li key={link.id}>
                   <button
                     onClick={() => scrollToSection(link.id)}
-                    className="text-slate-300 hover:text-cyan-100 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-slate-300 hover:text-cyan-100 transition-colors"
                   >
                     {link.label}
+                    <ArrowUpRight size={13} className="opacity-80" />
                   </button>
                 </li>
               ))}

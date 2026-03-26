@@ -64,6 +64,7 @@ Function file:
 supabase secrets set \
   TURNSTILE_SECRET_KEY=your_turnstile_secret \
   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key \
+  ALLOWED_ORIGINS=https://ashenafi.dev,http://localhost:5173 \
   CONTACT_MESSAGES_TABLE=contact_messages
 ```
 

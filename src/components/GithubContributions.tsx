@@ -71,11 +71,11 @@ const GithubContributions: React.FC = () => {
             </a>
           </div>
 
-          <div className="mask-fade-bottom overflow-x-auto rounded-xl border border-slate-700 bg-slate-950/80 p-4">
+          <div className="mask-fade-bottom overflow-hidden rounded-xl border border-slate-700 bg-slate-950/80 p-4">
             <img
-              src="https://ghchart.rshah.org/22d3ee/ashenafibassa"
-              alt="GitHub contribution chart for ashenafibassa"
-              className="min-w-[720px]"
+              src="https://ghchart.rshah.org/22d3ee/Ashenafi-Bancha"
+              alt="GitHub contribution chart for Ashenafi-Bancha"
+              className="h-auto w-full"
             />
           </div>
         </motion.div>

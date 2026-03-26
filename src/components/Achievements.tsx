@@ -30,7 +30,7 @@ const Achievements: React.FC = () => {
     },
   ];
 
-  const languages = ['English', 'Amharic', 'Wolaita'];
+  const languages = ['English', 'Amharic', 'Wolayta'];
 
   return (
     <section id="translation" className="section-shell">

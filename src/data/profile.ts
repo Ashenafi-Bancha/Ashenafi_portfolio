@@ -33,7 +33,7 @@ export const profile = {
   availability:
     'Open to internships, junior full-stack roles, and ambitious freelance projects.',
   social: {
-    github: 'https://github.com/ashenafibassa',
+    github: 'https://github.com/Ashenafi-Bancha',
     linkedin: 'https://www.linkedin.com/in/ashenafi-bancha/',
     telegram: 'https://t.me/ashancha',
     facebook: 'https://facebook.com/your-profile',
@@ -41,8 +41,6 @@ export const profile = {
   },
   photos: {
     professional: '/assets/images/Ashu.jpg',
-    coding:
-      'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80',
   },
 };
 

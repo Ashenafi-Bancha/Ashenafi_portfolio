@@ -123,8 +123,8 @@ const Navbar: React.FC = () => {
                   ? 'border-slate-300 bg-white text-slate-800 hover:bg-slate-100'
                   : 'border-slate-700/80 bg-slate-900/80 text-cyan-100 hover:bg-slate-800'
               }`}
-              aria-label={isLight ? 'Switch to dark theme' : 'Switch to white theme'}
-              title={isLight ? 'Switch to dark theme' : 'Switch to white theme'}
+              aria-label={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
+              title={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
             >
               {isLight ? <Moon size={18} /> : <Sun size={18} />}
             </button>
@@ -148,8 +148,8 @@ const Navbar: React.FC = () => {
                   ? 'border border-slate-300 bg-white text-slate-800 hover:bg-slate-100'
                   : 'text-slate-300 hover:bg-slate-900'
               }`}
-              aria-label={isLight ? 'Switch to dark theme' : 'Switch to white theme'}
-              title={isLight ? 'Switch to dark theme' : 'Switch to white theme'}
+              aria-label={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
+              title={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
             >
               {isLight ? <Moon size={20} /> : <Sun size={20} />}
             </button>

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Briefcase, GraduationCap, Rocket, Workflow } from 'lucide-react';
-import { profile } from '../data/profile';
+import { heroStats, profile } from '../data/profile';
 
 const About: React.FC = () => {
   const ref = useRef(null);
@@ -73,18 +73,12 @@ const About: React.FC = () => {
             </p>
 
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-              <div className="rounded-xl border border-cyan-300/25 bg-slate-900/80 p-4">
-                <p className="text-2xl font-extrabold text-white">5+</p>
-                <p className="text-xs text-slate-400">Featured Products</p>
-              </div>
-              <div className="rounded-xl border border-cyan-300/25 bg-slate-900/80 p-4">
-                <p className="text-2xl font-extrabold text-white">4th</p>
-                <p className="text-xs text-slate-400">Year CS Student</p>
-              </div>
-              <div className="rounded-xl border border-cyan-300/25 bg-slate-900/80 p-4">
-                <p className="text-2xl font-extrabold text-white">100%</p>
-                <p className="text-xs text-slate-400">Ownership Mindset</p>
-              </div>
+              {heroStats.slice(0, 3).map((stat) => (
+                <div key={stat.label} className="rounded-xl border border-cyan-300/25 bg-slate-900/80 p-4">
+                  <p className="text-2xl font-extrabold text-white">{stat.value}</p>
+                  <p className="text-xs text-slate-400">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </motion.article>
 

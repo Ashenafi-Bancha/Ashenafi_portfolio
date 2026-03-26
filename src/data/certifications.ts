@@ -29,14 +29,14 @@ export const certificationGroups: CertificationGroup[] = [
     accent: 'from-cyan-400/30 to-sky-300/10',
     certifications: [
       {
-        title: 'Frontend Certificate 01',
-        issuer: 'Certificate Provider',
+        title: 'Responsive Web Interface Development',
+        issuer: 'Professional Online Learning Platform',
         year: '2025',
         status: 'Completed',
       },
       {
-        title: 'Frontend Certificate 02',
-        issuer: 'Certificate Provider',
+        title: 'Advanced React UI Engineering',
+        issuer: 'Professional Online Learning Platform',
         year: '2026',
         status: 'In Progress',
       },
@@ -48,14 +48,14 @@ export const certificationGroups: CertificationGroup[] = [
     accent: 'from-emerald-400/30 to-teal-300/10',
     certifications: [
       {
-        title: 'Backend Certificate 01',
-        issuer: 'Certificate Provider',
+        title: 'Backend API Development',
+        issuer: 'Professional Online Learning Platform',
         year: '2025',
         status: 'Completed',
       },
       {
-        title: 'Backend Certificate 02',
-        issuer: 'Certificate Provider',
+        title: 'Scalable Service Architecture',
+        issuer: 'Professional Online Learning Platform',
         year: '2026',
         status: 'In Progress',
       },
@@ -67,14 +67,14 @@ export const certificationGroups: CertificationGroup[] = [
     accent: 'from-violet-400/30 to-fuchsia-300/10',
     certifications: [
       {
-        title: 'AI Certificate 01',
-        issuer: 'Certificate Provider',
+        title: 'Applied AI for Software Teams',
+        issuer: 'Professional Online Learning Platform',
         year: '2025',
         status: 'Completed',
       },
       {
-        title: 'AI Certificate 02',
-        issuer: 'Certificate Provider',
+        title: 'Prompt Engineering and AI Workflow Design',
+        issuer: 'Professional Online Learning Platform',
         year: '2026',
         status: 'In Progress',
       },
@@ -86,14 +86,14 @@ export const certificationGroups: CertificationGroup[] = [
     accent: 'from-blue-400/30 to-indigo-300/10',
     certifications: [
       {
-        title: 'Database Certificate 01',
-        issuer: 'Certificate Provider',
+        title: 'Relational Database Design and SQL',
+        issuer: 'Professional Online Learning Platform',
         year: '2025',
         status: 'Completed',
       },
       {
-        title: 'Database Certificate 02',
-        issuer: 'Certificate Provider',
+        title: 'Database Performance and Query Optimization',
+        issuer: 'Professional Online Learning Platform',
         year: '2026',
         status: 'In Progress',
       },
@@ -105,14 +105,14 @@ export const certificationGroups: CertificationGroup[] = [
     accent: 'from-orange-400/30 to-amber-300/10',
     certifications: [
       {
-        title: 'Git & GitHub Certificate 01',
-        issuer: 'Certificate Provider',
+        title: 'Git and GitHub Collaboration Workflow',
+        issuer: 'Professional Online Learning Platform',
         year: '2025',
         status: 'Completed',
       },
       {
-        title: 'Git & GitHub Certificate 02',
-        issuer: 'Certificate Provider',
+        title: 'Branch Strategy and Release Management',
+        issuer: 'Professional Online Learning Platform',
         year: '2026',
         status: 'In Progress',
       },
@@ -125,13 +125,13 @@ export const certificationGroups: CertificationGroup[] = [
     certifications: [
       {
         title: 'Cloud / DevOps Certificate',
-        issuer: 'Certificate Provider',
+        issuer: 'Professional Online Learning Platform',
         year: '2025',
         status: 'Completed',
       },
       {
         title: 'System Design Certificate',
-        issuer: 'Certificate Provider',
+        issuer: 'Professional Online Learning Platform',
         year: '2026',
         status: 'In Progress',
       },

@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
     () =>
       toTypedWords([
         { text: 'Hi, I am ' },
-        { text: ' Ashenafi Bancha', highlight: true },
+        { text: 'Ashenafi Bancha', highlight: true },
         { text: ', Full Stack Developer' },
       ]),
     []
@@ -103,7 +103,7 @@ const Hero: React.FC = () => {
     () =>
       toTypedWords([
         {
-          text: 'Localization & Translation: I also work on localization, translating and interpreting English and Amharic into Wolayta with cultural nuance and contextual clarity.',
+          text: 'Localization & Translation: I work on localization, translating and interpreting English and Amharic into Wolayta with cultural nuance and contextual clarity.',
         },
       ]),
     []
@@ -338,7 +338,7 @@ const Hero: React.FC = () => {
               ))}
 
               <div className="min-h-[84px] w-full overflow-visible sm:flex-1">
-                <p className={`text-[1.75rem] font-extrabold leading-tight sm:whitespace-nowrap sm:text-[2.05rem] ${isLight ? 'text-cyan-700' : 'text-cyan-200'}`}>
+                <p className={`text-[1.75rem] font-extrabold leading-tight lg:whitespace-nowrap sm:text-[2.05rem] ${isLight ? 'text-cyan-700' : 'text-cyan-200'}`}>
                   {primaryIntroWords.slice(0, visiblePrimaryWordCount).map((word, index) => (
                     <span
                       key={`primary-${index}`}
@@ -358,7 +358,7 @@ const Hero: React.FC = () => {
                 </p>
 
                 <p
-                  className="mt-1 min-w-0 text-[1.08rem] font-semibold leading-relaxed tracking-[0.01em] sm:whitespace-nowrap"
+                  className="mt-1 min-w-0 text-[1.08rem] font-semibold leading-relaxed tracking-[0.01em] lg:whitespace-nowrap"
                 >
                   {localizationWords.slice(0, visibleLocalizationWordCount).map((word, index) => (
                     <span
@@ -378,7 +378,7 @@ const Hero: React.FC = () => {
                   initial={{ opacity: 0.4, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, ease: 'easeOut' }}
-                  className={`mt-2 min-w-0 text-xl font-bold leading-snug sm:whitespace-nowrap ${isLight ? 'text-slate-700' : 'text-slate-200'}`}
+                  className={`mt-2 min-w-0 text-xl font-bold leading-snug lg:whitespace-nowrap ${isLight ? 'text-slate-700' : 'text-slate-200'}`}
                 >
                   {activeIntroWords.slice(0, visibleWordCount).map((word, index) => (
                     <span key={`${activeIntroLineIndex}-${index}`}>
@@ -434,7 +434,7 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className={`mb-6 max-w-2xl text-lg font-semibold ${isLight ? 'text-slate-700' : 'text-slate-200'}`}
           >
-            Computer Science Student | Builder of Scalable Digital Systems
+            {profile.subtitle}
           </motion.p>
 
           <motion.p

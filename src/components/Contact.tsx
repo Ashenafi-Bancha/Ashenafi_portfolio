@@ -276,7 +276,7 @@ const Contact: React.FC = () => {
                   ? 'border-amber-500/40 bg-amber-100 text-amber-800'
                   : 'border-amber-300/40 bg-amber-400/10 text-amber-100'
               }`}>
-                Supabase is not configured yet. Add your <strong>VITE_SUPABASE_URL</strong> and <strong>VITE_SUPABASE_ANON_KEY</strong> in <strong>.env</strong> to enable message delivery.
+                Contact form is temporarily unavailable while messaging service configuration is being completed.
               </div>
             )}
 
@@ -286,7 +286,7 @@ const Contact: React.FC = () => {
                   ? 'border-amber-500/40 bg-amber-100 text-amber-800'
                   : 'border-amber-300/40 bg-amber-400/10 text-amber-100'
               }`}>
-                Cloudflare Turnstile is not configured yet. Add <strong>VITE_TURNSTILE_SITE_KEY</strong> in <strong>.env</strong> to enable anti-spam protection.
+                Anti-spam verification is temporarily unavailable. Please use email or social links to reach me directly.
               </div>
             )}
 

@@ -19,16 +19,16 @@ const projects: Project[] = [
       'Designed and developed a modern college website integrated with an LMS to manage courses, content delivery, and student learning workflows.',
     image: 'https://source.unsplash.com/1200x800/?film,cinema,education,technology',
     techStack: ['React', 'Node.js', 'PostgreSQL', 'LMS'],
-    githubUrl: 'https://github.com/ashenafibassa',
+    githubUrl: 'https://github.com/Ashenafi-Bancha',
     liveUrl: 'https://marata-college.example.com',
   },
   {
-    title: 'Wolaita Digital E-Museum (Web & Mobile)',
+    title: 'Wolayta Digital E-Museum (Web & Mobile)',
     description:
-      'Built a digital museum platform and companion mobile app to preserve and showcase Wolaita heritage through interactive archives and storytelling.',
+      'Built a digital museum platform and companion mobile app to preserve and showcase Wolayta heritage through interactive archives and storytelling.',
     image: 'https://source.unsplash.com/1200x800/?museum,culture,digital,exhibition',
     techStack: ['Next.js', 'TypeScript', 'Mobile App', 'Supabase'],
-    githubUrl: 'https://github.com/ashenafibassa',
+    githubUrl: 'https://github.com/Ashenafi-Bancha',
     liveUrl: 'https://wolaita-emuseum.example.com',
   },
   {
@@ -37,7 +37,7 @@ const projects: Project[] = [
       'Rental management platform for Addis Ababa that streamlines property listings, tenant workflows, and landlord operations in one system.',
     image: 'https://source.unsplash.com/1200x800/?apartment,rental,city,real-estate',
     techStack: ['React', 'Node.js', 'PostgreSQL', 'REST API'],
-    githubUrl: 'https://github.com/ashenafibassa',
+    githubUrl: 'https://github.com/Ashenafi-Bancha',
     liveUrl: 'https://addisrenthub.example.com',
   },
   {
@@ -46,7 +46,7 @@ const projects: Project[] = [
       'GoFundMe-inspired Ethiopian crowdfunding platform focused on payment accessibility, campaign transparency, and trust for local communities.',
     image: 'https://source.unsplash.com/1200x800/?crowdfunding,donation,community,fintech',
     techStack: ['Next.js', 'Node.js', 'PostgreSQL', 'Payment Integration'],
-    githubUrl: 'https://github.com/ashenafibassa',
+    githubUrl: 'https://github.com/Ashenafi-Bancha',
     liveUrl: 'https://ethiofund.example.com',
   },
 ];
