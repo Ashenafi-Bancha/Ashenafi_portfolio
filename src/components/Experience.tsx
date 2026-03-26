@@ -17,6 +17,32 @@ const Experience: React.FC = () => {
 
   const timeline: TimelineItem[] = [
     {
+      type: 'job',
+      title: 'Full-Stack Developer',
+      organization: 'RedFox ICT Solution Plc',
+      period: 'Mar 2026 - Present',
+      description:
+        'Working on a modern ERP system while modernizing legacy ERP platforms with current tech stacks and improved user experiences.',
+      highlights: [
+        'Contributing to ERP architecture modernization across frontend and backend layers',
+        'Upgrading legacy modules with modern frameworks, APIs, and maintainable code patterns',
+        'Improving ERP usability through cleaner workflows and better user-centered interface design',
+      ],
+    },
+    {
+      type: 'internship',
+      title: 'Software Development Summer Camp Trainee',
+      organization: 'INSA 2025 Summer Camp',
+      period: '2025',
+      description:
+        'Joined the development department and worked on building secure applications with a focus on practical software security and modern engineering practices.',
+      highlights: [
+        'Contributed to secure application development tasks within the summer camp development team',
+        'Applied security-aware coding approaches during implementation and testing',
+        'Collaborated with peers and mentors on modern software development workflows',
+      ],
+    },
+    {
       type: 'internship',
       title: 'Full-Stack Developer Intern',
       organization: 'Marota Film and Software College',
