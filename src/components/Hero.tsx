@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Sparkles } from 'lucide-react';
+import { ArrowRight, Download, Eye, Sparkles } from 'lucide-react';
 import { IconType } from 'react-icons';
 import { FaEnvelope, FaFacebookF, FaGithub, FaLinkedinIn, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import {
@@ -75,14 +75,7 @@ const Hero: React.FC = () => {
     {
       id: 'professional',
       src: profile.photos.professional,
-      alt: 'Professional portrait in suit',
-      label: 'Professional',
-    },
-    {
-      id: 'coding',
-      src: profile.photos.coding,
-      alt: 'Ashenafi coding on a computer',
-      label: 'Coding',
+      alt: 'Professional portrait of Ashenafi Bancha',
     },
   ];
 
@@ -177,7 +170,7 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05, duration: 0.5 }}
-            className="mb-7 grid grid-cols-2 gap-3 sm:gap-4"
+            className="mb-7 grid grid-cols-1 gap-3 sm:gap-4"
           >
             {heroPhotos.map((photo, index) => (
               <motion.figure
@@ -186,19 +179,18 @@ const Hero: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.08, duration: 0.45 }}
                 whileHover={{ y: -4, scale: 1.01 }}
-                className={`group relative overflow-hidden rounded-2xl border shadow-xl ${
+                className={`group relative h-56 w-56 overflow-hidden rounded-full border-4 shadow-2xl sm:h-64 sm:w-64 ${
                   isLight
-                    ? 'border-slate-300 bg-white'
-                    : 'border-slate-700/80 bg-slate-900/85'
+                    ? 'border-cyan-200 bg-white/90 shadow-cyan-300/30'
+                    : 'border-cyan-400/40 bg-slate-900/85 shadow-cyan-900/40'
                 }`}
               >
-                <img src={photo.src} alt={photo.alt} loading="lazy" className="h-44 w-full object-cover sm:h-48" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/12 to-transparent" />
-                <figcaption className="absolute inset-x-0 bottom-0 p-3">
-                  <span className="inline-flex rounded-full border border-cyan-300/35 bg-slate-950/65 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.15em] text-cyan-100">
-                    {photo.label}
-                  </span>
-                </figcaption>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top"
+                />
               </motion.figure>
             ))}
           </motion.div>
@@ -292,6 +284,22 @@ const Hero: React.FC = () => {
               View Projects
               <ArrowRight size={18} />
             </motion.button>
+
+            <motion.a
+              href={profile.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ y: -3, scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className={`inline-flex items-center gap-2 rounded-xl border px-6 py-3 font-semibold ${
+                isLight
+                  ? 'border-slate-300 bg-white text-slate-800'
+                  : 'border-slate-600 bg-slate-900/85 text-slate-100'
+              }`}
+            >
+              <Eye size={18} />
+              View CV
+            </motion.a>
 
             <motion.a
               href={profile.resumeUrl}
