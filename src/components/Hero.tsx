@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Eye, Sparkles } from 'lucide-react';
 import { IconType } from 'react-icons';
@@ -21,6 +21,20 @@ interface FloatingTech {
   glowClass: string;
   duration: number;
 }
+
+interface TypedWord {
+  text: string;
+  highlight?: boolean;
+}
+
+const toTypedWords = (parts: Array<{ text: string; highlight?: boolean }>): TypedWord[] =>
+  parts.flatMap((part) => {
+    const words = part.text.trim().split(/\s+/).filter(Boolean);
+    return words.map((word, index) => ({
+      text: `${word}${index < words.length - 1 ? ' ' : ''}`,
+      highlight: part.highlight,
+    }));
+  });
 
 const floatingTech: FloatingTech[] = [
   {
@@ -67,9 +81,137 @@ const floatingTech: FloatingTech[] = [
   },
 ];
 
+const rotatingIntroLines = [
+  'I design and develop end-to-end web applications.',
+  'I create modern frontends with scalable backend systems.',
+  'I focus on clean architecture, speed, and real user impact.',
+];
+
 const Hero: React.FC = () => {
   const { theme } = useTheme();
   const isLight = theme === 'light';
+  const primaryIntroWords = useMemo(
+    () =>
+      toTypedWords([
+        { text: 'Hi, I am ' },
+        { text: ' Ashenafi Bancha', highlight: true },
+        { text: ', Full Stack Developer' },
+      ]),
+    []
+  );
+  const localizationWords = useMemo(
+    () =>
+      toTypedWords([
+        {
+          text: 'Localization & Translation: I also work on localization, translating and interpreting English and Amharic into Wolayta with cultural nuance and contextual clarity.',
+        },
+      ]),
+    []
+  );
+
+  const [visiblePrimaryWordCount, setVisiblePrimaryWordCount] = useState(0);
+  const [visibleLocalizationWordCount, setVisibleLocalizationWordCount] = useState(0);
+  const [activeIntroLineIndex, setActiveIntroLineIndex] = useState(0);
+  const [visibleWordCount, setVisibleWordCount] = useState(0);
+  const introWordSpeed = 280;
+  const introHoldDuration = 2000;
+
+  const activeIntroWords = useMemo(
+    () => rotatingIntroLines[activeIntroLineIndex].trim().split(/\s+/).filter(Boolean),
+    [activeIntroLineIndex]
+  );
+
+  const getLocalizationWordClass = (word: TypedWord, index: number) => {
+    const cleanedWord = word.text.trim().replace(/[.,]/g, '');
+
+    if (index === 0) {
+      return isLight ? 'text-[#1A73E8]' : 'text-[#8AB4F8]';
+    }
+
+    if (cleanedWord === '&') {
+      return isLight ? 'text-[#FBBC04]' : 'text-[#FDD663]';
+    }
+
+    if (cleanedWord.startsWith('Translation')) {
+      return isLight ? 'text-[#EA4335]' : 'text-[#F28B82]';
+    }
+
+    if (cleanedWord.toLowerCase().includes('wolayta')) {
+      return isLight
+        ? 'bg-gradient-to-r from-red-600 via-slate-900 to-amber-400 bg-clip-text text-transparent font-extrabold'
+        : 'bg-gradient-to-r from-red-400 via-slate-200 to-yellow-300 bg-clip-text text-transparent font-extrabold';
+    }
+
+    return isLight ? 'text-slate-700' : 'text-slate-200';
+  };
+
+  useEffect(() => {
+    if (visiblePrimaryWordCount >= primaryIntroWords.length) {
+      return;
+    }
+
+    const primaryTimer = window.setTimeout(() => {
+      setVisiblePrimaryWordCount((prev) => prev + 1);
+    }, introWordSpeed);
+
+    return () => window.clearTimeout(primaryTimer);
+  }, [introWordSpeed, primaryIntroWords.length, visiblePrimaryWordCount]);
+
+  useEffect(() => {
+    const primaryDone = visiblePrimaryWordCount >= primaryIntroWords.length;
+    if (!primaryDone || visibleLocalizationWordCount >= localizationWords.length) {
+      return;
+    }
+
+    const localizationTimer = window.setTimeout(() => {
+      setVisibleLocalizationWordCount((prev) => prev + 1);
+    }, introWordSpeed);
+
+    return () => window.clearTimeout(localizationTimer);
+  }, [
+    introWordSpeed,
+    localizationWords.length,
+    primaryIntroWords.length,
+    visibleLocalizationWordCount,
+    visiblePrimaryWordCount,
+  ]);
+
+  useEffect(() => {
+    setVisibleWordCount(0);
+  }, [activeIntroLineIndex]);
+
+  useEffect(() => {
+    const canRotate =
+      visiblePrimaryWordCount >= primaryIntroWords.length &&
+      visibleLocalizationWordCount >= localizationWords.length;
+
+    if (!canRotate) {
+      return;
+    }
+
+    if (visibleWordCount < activeIntroWords.length) {
+      const typeTimer = window.setTimeout(() => {
+        setVisibleWordCount((prev) => prev + 1);
+      }, introWordSpeed);
+
+      return () => window.clearTimeout(typeTimer);
+    }
+
+    const rotationTimer = window.setTimeout(() => {
+      setActiveIntroLineIndex((prev) => (prev + 1) % rotatingIntroLines.length);
+    }, introHoldDuration);
+
+    return () => window.clearTimeout(rotationTimer);
+  }, [
+    activeIntroWords.length,
+    introHoldDuration,
+    introWordSpeed,
+    localizationWords.length,
+    primaryIntroWords.length,
+    visibleLocalizationWordCount,
+    visiblePrimaryWordCount,
+    visibleWordCount,
+  ]);
 
   const heroPhotos = [
     {
@@ -172,27 +314,82 @@ const Hero: React.FC = () => {
             transition={{ delay: 0.05, duration: 0.5 }}
             className="mb-7 grid grid-cols-1 gap-3 sm:gap-4"
           >
-            {heroPhotos.map((photo, index) => (
-              <motion.figure
-                key={photo.id}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + index * 0.08, duration: 0.45 }}
-                whileHover={{ y: -4, scale: 1.01 }}
-                className={`group relative h-56 w-56 overflow-hidden rounded-full border-4 shadow-2xl sm:h-64 sm:w-64 ${
-                  isLight
-                    ? 'border-cyan-200 bg-white/90 shadow-cyan-300/30'
-                    : 'border-cyan-400/40 bg-slate-900/85 shadow-cyan-900/40'
-                }`}
-              >
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className="h-full w-full object-cover object-top"
-                />
-              </motion.figure>
-            ))}
+            <div className="flex flex-col gap-4 overflow-visible sm:flex-row sm:items-start sm:gap-6">
+              {heroPhotos.map((photo, index) => (
+                <motion.figure
+                  key={photo.id}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + index * 0.08, duration: 0.45 }}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  className={`group relative h-56 w-56 shrink-0 overflow-hidden rounded-full border-4 shadow-2xl sm:h-64 sm:w-64 ${
+                    isLight
+                      ? 'border-cyan-200 bg-white/90 shadow-cyan-300/30'
+                      : 'border-cyan-400/40 bg-slate-900/85 shadow-cyan-900/40'
+                  }`}
+                >
+                  <img
+                    src={photo.src}
+                    alt={photo.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover object-top"
+                  />
+                </motion.figure>
+              ))}
+
+              <div className="min-h-[84px] w-full overflow-visible sm:flex-1">
+                <p className={`text-[1.75rem] font-extrabold leading-tight sm:whitespace-nowrap sm:text-[2.05rem] ${isLight ? 'text-cyan-700' : 'text-cyan-200'}`}>
+                  {primaryIntroWords.slice(0, visiblePrimaryWordCount).map((word, index) => (
+                    <span
+                      key={`primary-${index}`}
+                      className={word.highlight ? 'bg-gradient-to-r from-fuchsia-500 via-rose-500 to-amber-400 bg-clip-text text-transparent' : undefined}
+                    >
+                      {index > 0 &&
+                      !primaryIntroWords[index - 1].text.endsWith(' ') &&
+                      !/^[,.:;!?]/.test(word.text)
+                        ? ' '
+                        : ''}
+                      {word.text}
+                    </span>
+                  ))}
+                  {visiblePrimaryWordCount < primaryIntroWords.length ? (
+                    <span className={`${isLight ? 'text-cyan-500' : 'text-cyan-300'} animate-pulse`}>|</span>
+                  ) : null}
+                </p>
+
+                <p
+                  className="mt-1 min-w-0 text-[1.08rem] font-semibold leading-relaxed tracking-[0.01em] sm:whitespace-nowrap"
+                >
+                  {localizationWords.slice(0, visibleLocalizationWordCount).map((word, index) => (
+                    <span
+                      key={`localization-${index}`}
+                      className={getLocalizationWordClass(word, index)}
+                    >
+                      {word.text}
+                    </span>
+                  ))}
+                  {visiblePrimaryWordCount >= primaryIntroWords.length && visibleLocalizationWordCount < localizationWords.length ? (
+                    <span className={`${isLight ? 'text-cyan-600' : 'text-amber-300'} animate-pulse`}>|</span>
+                  ) : null}
+                </p>
+
+                <motion.p
+                  key={activeIntroLineIndex}
+                  initial={{ opacity: 0.4, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className={`mt-2 min-w-0 text-xl font-bold leading-snug sm:whitespace-nowrap ${isLight ? 'text-slate-700' : 'text-slate-200'}`}
+                >
+                  {activeIntroWords.slice(0, visibleWordCount).map((word, index) => (
+                    <span key={`${activeIntroLineIndex}-${index}`}>
+                      {word}
+                      {index < visibleWordCount - 1 ? ' ' : ''}
+                    </span>
+                  ))}
+                  <span className={`${isLight ? 'text-cyan-500' : 'text-cyan-300'} animate-pulse`}>|</span>
+                </motion.p>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
